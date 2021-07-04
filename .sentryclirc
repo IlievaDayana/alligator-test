@@ -1,0 +1,6 @@
+[auth]  
+token=f8c5ed24bd95480da12000604c281752dab64e7f386441e881d7f06b9fd6bb42
+​
+[defaults]
+project=test_sentry
+org=abb-tf

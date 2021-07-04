@@ -1,6 +1,5 @@
 <template>
   <div class="centered_content">
-    <Hello/>
     <div class="reviews">
       <div class="reviews__review">
         <div class="reviews__review_comment">
@@ -10,21 +9,36 @@
           cum sunt
         </div>
         <div class="reviews__review_img"></div>
-        
       </div>
       <div class="reviews__review">
         <div class="reviews__review_comment reviews__review_comment--left">
-          <span class="reviews__review_name review_name--left">Peter</span>
+          <span class="reviews__review_name reviews__review_name--left">Peter</span>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
           fugit fuga eius aut quasi quisquam iste, tenetur ex inventore ducimus
           cum sunt
         </div>
-        <div class="reviews__review_img"></div>
-        
+        <div class="reviews__review_img"></div>    
       </div>
-      
+      <div class="reviews__review">
+        <div class="reviews__review_comment reviews__review_comment">
+          <span class="reviews__review_name reviews__review_name">Peter</span>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+          fugit fuga eius aut quasi quisquam iste, tenetur ex inventore ducimus
+          cum sunt
+        </div>
+        <div class="reviews__review_img"></div>    
+      </div>
+      <div class="reviews__review">
+        <div class="reviews__review_comment reviews__review_comment--left">
+          <span class="reviews__review_name reviews__review_name--left">Peter</span>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+          fugit fuga eius aut quasi quisquam iste, tenetur ex inventore ducimus
+          cum sunt
+        </div>
+        <div class="reviews__review_img"></div>    
+      </div>
     </div>
-    <button @click="throew">throw error</button>
+
   </div>
 </template>
 <script>
@@ -82,10 +96,11 @@ export default {
         bottom: 100%;
         right: 2em;
       }
-      span{
-        position: absolute;
-        top:-40px;
-      }
+
+    }
+    &_name{
+      position: absolute;
+      top:-40px;
     }
     &_img {
       width:20px;
@@ -117,33 +132,30 @@ export default {
       &__review{
         &:after{
         right: 194px;
-       }
+      }
+
       &_comment{
         right: 210px;
         left: auto;
-        top: 10px;
 
         &--left {
           right:-90px;
+          &:after {
+            left:30px;
+          }
        }
       }
 
       &_name{
-        position: absolute;
-        display: block;
-        top: -50px;
-        right: 200px;
-        &--left{
-          justify-content: flex-end;
-          align-items: flex-end;
-          left: -300px;
-        }
+        &--left {
+          left:0px;
+       }
       }
+
       &_img {
         right: 185px;
       }
       }
-      
     }
   }
 </style>

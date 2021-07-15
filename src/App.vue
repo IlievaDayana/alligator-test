@@ -1,161 +1,49 @@
 <template>
-  <div class="centered_content">
-    <div class="reviews">
-      <div class="reviews__review">
-        <div class="reviews__review_comment">
-          <span class="reviews__review_name">Pepe</span>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-          fugit fuga eius aut quasi quisquam iste, tenetur ex inventore ducimus
-          cum sunt
-        </div>
-        <div class="reviews__review_img"></div>
-      </div>
-      <div class="reviews__review">
-        <div class="reviews__review_comment reviews__review_comment--left">
-          <span class="reviews__review_name reviews__review_name--left">Peter</span>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-          fugit fuga eius aut quasi quisquam iste, tenetur ex inventore ducimus
-          cum sunt
-        </div>
-        <div class="reviews__review_img"></div>    
-      </div>
-      <div class="reviews__review">
-        <div class="reviews__review_comment reviews__review_comment">
-          <span class="reviews__review_name reviews__review_name">Peter</span>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-          fugit fuga eius aut quasi quisquam iste, tenetur ex inventore ducimus
-          cum sunt
-        </div>
-        <div class="reviews__review_img"></div>    
-      </div>
-      <div class="reviews__review">
-        <div class="reviews__review_comment reviews__review_comment--left">
-          <span class="reviews__review_name reviews__review_name--left">Peter</span>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-          fugit fuga eius aut quasi quisquam iste, tenetur ex inventore ducimus
-          cum sunt
-        </div>
-        <div class="reviews__review_img"></div>    
-      </div>
+  <div class='container'>
+    <div v-if="content[0].title" class='container__title'>
+      <h1>{{content[0].title}}</h1>
     </div>
-
+    <div v-if="content[0].info.length>0" class='container__text'>
+      <p v-for="(t, index) in content[0].info" :key="index">{{t}}</p>
+    </div>
+    <div v-if="content[0].svg" class='container__img'>
+     <img src="" alt="">
+    </div>
   </div>
 </template>
+
 <script>
+// import Header from './components/Header.vue'
+// import HelloWorld from './components/HelloWorld.vue'
+// import BackgroundShapes from './components/BackgroundShapes.vue'
+// import Portfolio from './components/Portfolio.vue'
+
 export default {
-  methods: {
-    throew(){
-      throw new Error('error')
-    }
-  }
-}
+  name: "App",
+  data() {
+    return {
+      content: [
+        {
+          title: "what you want to buy",
+          info: [
+            "A short story is a piece of prose fiction that typically can be read in one sitting and focuses on a self-contained incident or series of linked incidents, with the intent of evoking a single effect or mood. The short story is one of the oldest types of literature and has existed in the form of legends, mythic",
+            " tales, folk tales, fairy tales, fables and anecdotes in various ancient communities across the world",
+          ],
+        },
+        { svg: "link", svgText: "blablabla" },
+        {
+          previewTitle: "",
+          pic: "link",
+          whatYouGet: ["hello", "vegan", "sport", "collision"],
+        },
+        { takeLookTitle: "", takeLookText: "" },
+        { galerySvg: "link" },
+        {
+          btnGetText: "Get vip access for free",
+          declineButtonText: "no thanks",
+        },
+      ],
+    };
+  },
+};
 </script>
-<style lang='scss'>
-* {
-  box-sizing: border-box;
-}
-.centered_content {
-  margin-top:50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.reviews {
-  width: 400px;
-  max-width: 800px;
-  height: auto;
-  background-color: gray;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  &__review{
-    margin: 0 auto;
-    width: 400px;
-    height: 150px;
-    position: relative;
-    &_comment {
-      width: 270px;
-      height: auto;
-      margin: 20px 0;
-      background-color: whitesmoke;
-      position: absolute;
-      left:50px;
-      display: flex;
-      justify-content: flex-end;
-      border-radius:5px;
-      padding: 5px;
-      &:after {
-        border-bottom: 10px solid rgb(255, 255, 255);
-        border-left: 10px solid transparent;
-        border-right: 10px solid transparent;
-        width: 0;
-        height: 0;
-        content: "";
-        display: block;
-        position: absolute;
-        bottom: 100%;
-        right: 2em;
-      }
-
-    }
-    &_name{
-      position: absolute;
-      top:-40px;
-    }
-    &_img {
-      width:20px;
-      height:20px;
-      border-radius:50%;
-      background-color: whitesmoke;
-      position: absolute;
-      right: 22px;
-      top:-20px;
-      z-index: 3;
-    }
-
-    &:after{
-      content:'';
-      position: absolute;
-      width: 2px;
-      height: 110%;
-      background-color: black;
-      right: 30px;
-      top:-30px;
-    }
-  }
- 
-}
-
- @media screen and (min-width: 600px) {
-   .reviews {
-     width:800px;
-      &__review{
-        &:after{
-        right: 194px;
-      }
-
-      &_comment{
-        right: 210px;
-        left: auto;
-
-        &--left {
-          right:-90px;
-          &:after {
-            left:30px;
-          }
-       }
-      }
-
-      &_name{
-        &--left {
-          left:0px;
-       }
-      }
-
-      &_img {
-        right: 185px;
-      }
-      }
-    }
-  }
-</style>

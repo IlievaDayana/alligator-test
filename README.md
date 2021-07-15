@@ -1,6 +1,7 @@
 # alligator-test
 made some changes in github
 asdadaddwwssksksksks
+wanted to add smth more
 ## Project setup
 ```
 npm install
